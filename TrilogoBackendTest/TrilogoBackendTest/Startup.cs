@@ -74,10 +74,12 @@ namespace TrilogoBackendTest
             }
 
             app.UseAuthentication();
-            app.UseAuthorization();
-
             app.UseRouting();
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace TrilogoBackendTest.Controllers
 {
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     public class TicketController : ControllerBase
     {
