@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
     public interface ITicketRepositoryLeitura
     {
-        ICollection<Ticket> RetornarTodos();
-
+        Task<ICollection<Ticket>> RetornarTodos();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Infrastructure.Repository
@@ -7,10 +8,12 @@ namespace Infrastructure.Repository
     public abstract class RepositoryBase<TObject> : IRepository<TObject> where TObject : class
     {
         protected readonly TrilogoContext _context;
+        protected readonly IDbConnection _connectionRead;
 
         public RepositoryBase(TrilogoContext context)
         {
             _context = context;
+            _connectionRead = context.ConnectionRead();
         }
 
         public void Apagar(TObject delete)

@@ -1,11 +1,13 @@
 ﻿using Domain;
 using Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using System;
+using System.Data;
 
 namespace Infrastructure
 {
-    public class TrilogoContext : DbContext
+    public class TrilogoContext : DbContext, IConnectionFactory
     {
 
         public const string ConnectionString = "Server=127.0.0.1;Database=trilogo;Port=7071;UserId=postgres;Password=Grup0$dT1Bd;Pooling=true;";
@@ -29,5 +31,9 @@ namespace Infrastructure
             modelBuilder.ApplyConfiguration(new TicketConfiguration());
         }
 
+        public IDbConnection ConnectionRead()
+        {
+            return new NpgsqlConnection(ConnectionString);
+        }
     }
 }

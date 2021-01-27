@@ -46,9 +46,9 @@ namespace TrilogoBackendTest.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_repository.RetornarTodos());
+            return Ok(await _repository.RetornarTodos());
         }
 
     }

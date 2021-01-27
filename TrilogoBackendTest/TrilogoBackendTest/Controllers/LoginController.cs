@@ -19,30 +19,25 @@ namespace TrilogoBackendTest.Controllers
     public class LoginController : ControllerBase
     {
         private readonly UsuarioRepository repository;
-        private TokenFactory geradorToken;
+        private TokenFactory _factory;
 
         public LoginController()
         {
             this.repository = new UsuarioRepository();
-            geradorToken = new TokenFactory();
+            _factory = new TokenFactory();
         }
 
         [HttpPost]
         public IActionResult Token([FromBody] Usuario usuario)
         {
-            // Recupera o usuário
             var user = repository.VerificarUsuario(usuario);
-
-            // Verifica se o usuário existe
             if (user == null)
                 return NotFound(new { message = "Usuário ou senha inválidos" });
 
-            var token = geradorToken.GerarToken(user);
+            var token = _factory.GerarToken(user);
 
-            // Oculta a senha
             user.Senha = "";
 
-            // Retorna os dados
             return Ok(new LoginModel
                     {
                         UsuarioLogado = user,
