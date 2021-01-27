@@ -2,6 +2,7 @@
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Infrastructure.Repository
@@ -16,7 +17,7 @@ namespace Infrastructure.Repository
 
         public ICollection<Ticket> RetornarTodos()
         {
-            return null;
+            return _context.Ticket.ToList();
         }
     }
 }

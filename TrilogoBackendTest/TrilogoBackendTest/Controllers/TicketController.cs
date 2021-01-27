@@ -1,6 +1,7 @@
 ﻿using Domain;
 using Infrastructure;
 using Infrastructure.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,11 @@ using System.Threading.Tasks;
 namespace TrilogoBackendTest.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    //[Authorize]
+    [Route("api/[controller]")]
     public class TicketController : ControllerBase
     {
-        TicketRepository _repository;
+        private readonly TicketRepository _repository;
 
         public TicketController(TrilogoContext context)
         {
@@ -30,21 +32,23 @@ namespace TrilogoBackendTest.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id)
+        public IActionResult Put([FromBody] Ticket ticket, int id)
         {
+            _repository.Editar(ticket, id);
             return Ok();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+           
             return Ok();
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok();
+            return Ok(_repository.RetornarTodos());
         }
 
     }
