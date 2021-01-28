@@ -10,8 +10,6 @@ namespace Infrastructure
     public class TrilogoContext : DbContext, IConnectionFactory
     {
 
-        public const string ConnectionString = "Server=127.0.0.1;Database=trilogo;Port=7071;UserId=postgres;Password=123456;Pooling=true;";
-
         public DbSet<Ticket> Ticket { get; set; }
 
 
@@ -23,7 +21,7 @@ namespace Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (optionsBuilder.IsConfigured) return;
-            optionsBuilder.UseNpgsql(ConnectionString, o => o.SetPostgresVersion(9, 6));
+            optionsBuilder.UseNpgsql(CredentialsDBSingleton.Credenciais, o => o.SetPostgresVersion(9, 6));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -33,7 +31,7 @@ namespace Infrastructure
 
         public IDbConnection ConnectionRead()
         {
-            return new NpgsqlConnection(ConnectionString);
+            return new NpgsqlConnection(CredentialsDBSingleton.Credenciais);
         }
     }
 }

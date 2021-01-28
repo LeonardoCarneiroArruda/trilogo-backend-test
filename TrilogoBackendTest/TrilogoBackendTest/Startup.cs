@@ -33,7 +33,7 @@ namespace TrilogoBackendTest
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddDbContext<TrilogoContext>(options => options.UseNpgsql(TrilogoContext.ConnectionString));
+            services.AddDbContext<TrilogoContext>(options => options.UseNpgsql(CredentialsDBSingleton.Credenciais));
 
             services.AddControllers();
             services.AddCors();
