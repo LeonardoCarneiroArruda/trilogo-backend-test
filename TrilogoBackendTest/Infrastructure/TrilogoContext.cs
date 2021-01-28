@@ -10,7 +10,7 @@ namespace Infrastructure
     public class TrilogoContext : DbContext, IConnectionFactory
     {
 
-        public const string ConnectionString = "Server=127.0.0.1;Database=trilogo;Port=7071;UserId=postgres;Password=Grup0$dT1Bd;Pooling=true;";
+        public const string ConnectionString = "Server=127.0.0.1;Database=trilogo;Port=7071;UserId=postgres;Password=123456;Pooling=true;";
 
         public DbSet<Ticket> Ticket { get; set; }
 

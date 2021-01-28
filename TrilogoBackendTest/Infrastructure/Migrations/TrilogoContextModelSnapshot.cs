@@ -21,7 +21,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Ticket", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
@@ -48,7 +48,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("description");
 
-                    b.HasKey("Id")
+                    b.HasKey("id")
                         .HasName("pk_usuario");
 
                     b.ToTable("ticket");

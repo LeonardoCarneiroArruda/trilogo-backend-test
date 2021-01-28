@@ -39,9 +39,14 @@ namespace TrilogoBackendTest.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-           
+
+            var obj = await _repository.RetornarPorId(id);
+
+            if (obj != null)
+                _repository.Apagar(obj);
+            
             return Ok();
         }
 

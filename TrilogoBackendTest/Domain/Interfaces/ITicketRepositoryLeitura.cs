@@ -8,5 +8,6 @@ namespace Domain.Interfaces
     public interface ITicketRepositoryLeitura
     {
         Task<ICollection<Ticket>> RetornarTodos();
+        Task<Ticket> RetornarPorId(int id);
     }
 }

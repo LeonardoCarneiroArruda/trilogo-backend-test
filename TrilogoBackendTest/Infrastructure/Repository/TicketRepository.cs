@@ -17,6 +17,17 @@ namespace Infrastructure.Repository
         {
         }
 
+        public async Task<Ticket> RetornarPorId(int Id)
+        {
+            Ticket result = await _connectionRead.QueryFirstAsync<Ticket>("select * from public.ticket where id = @Id", 
+                                                                 new 
+                                                                 {
+                                                                     Id = Id
+                                                                 });
+
+            return result;
+        }
+
         public async Task<ICollection<Ticket>> RetornarTodos()
         {
             var result = await _connectionRead.QueryAsync<Ticket>("select * from public.ticket");

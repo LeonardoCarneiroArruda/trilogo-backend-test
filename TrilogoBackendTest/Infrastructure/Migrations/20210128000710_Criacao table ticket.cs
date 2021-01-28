@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infrastructure.Migrations
 {
-    public partial class CriacaoTableTicket : Migration
+    public partial class Criacaotableticket : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace Infrastructure.Migrations
                 name: "ticket",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     description = table.Column<string>(type: "text", nullable: false),
                     authorname = table.Column<string>(type: "text", nullable: false),
@@ -22,7 +22,7 @@ namespace Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("pk_usuario", x => x.Id);
+                    table.PrimaryKey("pk_usuario", x => x.id);
                 });
         }
 

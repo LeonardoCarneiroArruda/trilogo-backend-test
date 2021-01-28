@@ -12,7 +12,7 @@ namespace Infrastructure.Configuration
         public void Configure(EntityTypeBuilder<Ticket> builder)
         {
             builder.ToTable("ticket");
-            builder.HasKey(e => e.Id)
+            builder.HasKey(e => e.id)
                    .HasName("pk_usuario");
             builder.Property(e => e.AuthorName)
                    .HasColumnName("authorname")
