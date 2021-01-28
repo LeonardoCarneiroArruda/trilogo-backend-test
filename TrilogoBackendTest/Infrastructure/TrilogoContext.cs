@@ -12,7 +12,6 @@ namespace Infrastructure
 
         public DbSet<Ticket> Ticket { get; set; }
 
-
         public TrilogoContext(DbContextOptions<TrilogoContext> options) : base(options)
         {
 

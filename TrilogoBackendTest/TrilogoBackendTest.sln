@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrilogoBackendTest", "Trilo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E912BD16-5E3F-4AE5-B22A-9C12BFF3AE05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{4388B2D3-AE49-42F4-BDE3-85CD2BE9974C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{4388B2D3-AE49-42F4-BDE3-85CD2BE9974C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{D04320CA-A3F4-4417-AC02-F132DB3F5FDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4388B2D3-AE49-42F4-BDE3-85CD2BE9974C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4388B2D3-AE49-42F4-BDE3-85CD2BE9974C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4388B2D3-AE49-42F4-BDE3-85CD2BE9974C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D04320CA-A3F4-4417-AC02-F132DB3F5FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D04320CA-A3F4-4417-AC02-F132DB3F5FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D04320CA-A3F4-4417-AC02-F132DB3F5FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D04320CA-A3F4-4417-AC02-F132DB3F5FDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
